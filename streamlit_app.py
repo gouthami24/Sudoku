@@ -11,15 +11,18 @@ st.title('Sudoku Puzzle Generator')
 #Generate Sudoku
 def generate_sudoku(grid, level):
     llm = ChatOpenAI(api_key=openai_api_key, model_name="gpt-3.5-turbo", temperature = 0.5)
-    prompt=f"Generate {grid} {level} sudoku"
+    prompt=f"Generate {grid} {level} sudoku in printable grid format"
     response = llm.stream(prompt)
     return (response)
 
+sudoku = generate_sudoku(size)
+print("Generated Sudoku puzzle:")
+print_grid(sudoku)
 # User input
-grid = st.selectbox('Select grid:', ['2x2','3x3','4x4'])  
+size = st.selectbox('Select size:', ['2','3','4'])  
 level = st.selectbox('Select level:', ['Easy','Medium','Hard'])  
 
 #Calling the Sudoku
-sudoku_puzzle = generate_sudoku(grid, level)
+sudoku_puzzle = generate_sudoku(size, level)
 st.write('The Sudoku Puzzle is', sudoku_puzzle)
     
