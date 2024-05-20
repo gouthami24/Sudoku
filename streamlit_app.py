@@ -20,6 +20,6 @@ grid = st.selectbox('Select grid:', ['2x2','3x3','4x4'])
 level = st.selectbox('Select level:', ['Easy','Medium','Hard'])  
 
 #Calling the Sudoku
- sudoku_puzzle = generate_sudoku(grid, level)
- st.write('The Sudoku Puzzle is', sudoku_puzzle)
+sudoku_puzzle = generate_sudoku(grid, level)
+st.write('The Sudoku Puzzle is', sudoku_puzzle)
     
