@@ -24,6 +24,6 @@ size = st.selectbox('Select size:', ['2','3','4'])
 level = st.selectbox('Select level:', ['Easy','Medium','Hard'])  
 
 #Calling the Sudoku
-sudoku_puzzle = generate_sudoku(size, level)
-st.write('The Sudoku Puzzle is', sudoku_puzzle)
+generate_sudoku(size, level)
+#st.write('The Sudoku Puzzle is', sudoku_puzzle)
     
