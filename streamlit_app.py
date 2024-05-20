@@ -35,8 +35,8 @@ st.write(level)
 #st.write('The Sudoku Puzzle is', sudoku_puzzle)
 if st.button('Generate'):
     sudoku=generate_sudoku(size, level)
-    st.markdown(sudoku, unsafe_allow_html=False)
-    # st.components.v1.html(sudoku_html, height=600)
+    # st.markdown(sudoku, unsafe_allow_html=False)
+    st.components.v1.html(sudoku, height=600)
 else:
     st.write("Sorry Cannot Generate")
 st.write("Generated Sudoku puzzle:")
