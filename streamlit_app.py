@@ -14,7 +14,7 @@ def generate_sudoku(size, level):
     prompt=f"Generate {size} x {size} {level} sudoku in printable grid format. Give me back only the HTML. Do not add any text before as context"
     st.write(prompt)
     response = llm.stream(prompt)
-    st.write(response)
+    # st.write(response)
     return (response)
     
 # sudoku = generate_sudoku(size,level)
@@ -35,8 +35,8 @@ st.write(level)
 #st.write('The Sudoku Puzzle is', sudoku_puzzle)
 if st.button('Generate'):
     sudoku=generate_sudoku(size, level)
-    # st.markdown(sudoku, unsafe_allow_html=False)
-    st.components.v1.html(sudoku, height=600)
+    st.markdown(sudoku, unsafe_allow_html=False)
+    # st.components.v1.html(sudoku, height=600)
 else:
     st.write("Sorry Cannot Generate")
 st.write("Generated Sudoku puzzle:")
