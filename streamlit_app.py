@@ -23,13 +23,16 @@ def generate_sudoku(size, level):
 # User input
 size = st.selectbox('Select size:', ['2','3','4'])  
 level = st.selectbox('Select level:', ['Easy','Medium','Hard'])  
+print(size)
+print(level)
 
 #Calling the Sudoku
 #generate_sudoku(size, level)
 #st.write('The Sudoku Puzzle is', sudoku_puzzle)
 if st.button('Generate'):
         sudoku=generate_sudoku(size,level)
-
+   else
+        print("Sorry Cannot Generate")
 print("Generated Sudoku puzzle:")
 #print(sudoku)
     
