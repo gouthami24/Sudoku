@@ -11,7 +11,7 @@ st.title('Sudoku Puzzle Generator')
 #Generate Sudoku
 def generate_sudoku(size, level):
     llm = ChatOpenAI(api_key=openai_api_key, model_name="gpt-3.5-turbo", temperature = 0.5)
-    prompt=f"Generate {size} x {size} {level} sudoku in printable grid format. Give me back only the HTML portion. Do not add any text before as context"
+    prompt=f"Generate {size} x {size} {level} sudoku in printable grid format. Give me back only the HTML. Do not add any text before as context"
     st.write(prompt)
     response = llm.stream(prompt)
     st.write(response)
@@ -35,7 +35,7 @@ st.write(level)
 #st.write('The Sudoku Puzzle is', sudoku_puzzle)
 if st.button('Generate'):
     # sudoku=generate_sudoku(size,level)
-    st.markdown(generate_sudoku(size, level), unsafe_allow_html=True)
+    st.markdown(generate_sudoku(size, level), unsafe_allow_html=False)
     # st.components.v1.html(sudoku_html, height=600)
 else:
     st.write("Sorry Cannot Generate")
