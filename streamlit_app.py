@@ -15,7 +15,13 @@ def generate_sudoku(size, level):
     st.write(prompt)
     response = llm.stream(prompt)
     # st.write(response)
-    return (response)
+    # Initialize an empty string to hold the response
+    response_text = ""
+    # Iterate over the generator and accumulate the response text
+    for chunk in response:
+        response_text += chunk["choices"][0]["text"]  # Adjust based on the actual structure of the response
+
+    return (response_text)
     
 # sudoku = generate_sudoku(size,level)
 # Define the HTML for the Sudoku puzzle
