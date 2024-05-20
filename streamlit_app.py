@@ -30,9 +30,9 @@ print(level)
 #generate_sudoku(size, level)
 #st.write('The Sudoku Puzzle is', sudoku_puzzle)
 if st.button('Generate'):
-        sudoku=generate_sudoku(size,level)
+    sudoku=generate_sudoku(size,level)
 else
-        print("Sorry Cannot Generate")
+    print("Sorry Cannot Generate")
 print("Generated Sudoku puzzle:")
 #print(sudoku)
     
