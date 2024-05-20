@@ -15,9 +15,10 @@ def generate_sudoku(size, level):
     response = llm.stream(prompt)
     return (response)
 
-sudoku = generate_sudoku(size)
+sudoku = generate_sudoku(size,level)
 print("Generated Sudoku puzzle:")
 print_grid(sudoku)
+
 # User input
 size = st.selectbox('Select size:', ['2','3','4'])  
 level = st.selectbox('Select level:', ['Easy','Medium','Hard'])  
