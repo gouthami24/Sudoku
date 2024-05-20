@@ -19,10 +19,10 @@ def generate_sudoku(size, level):
     
 # sudoku = generate_sudoku(size,level)
 # Define the HTML for the Sudoku puzzle
-sudoku_html = generate_sudoku(size, level)
+# sudoku_html = generate_sudoku(size, level)
 
 # Embed the HTML into the Streamlit app
-#st.components.v1.html(sudoku_html, height=500)
+# st.components.v1.html(sudoku_html, height=500)
 
 # User input
 size = st.selectbox('Select size:', ['2','3','4'])  
