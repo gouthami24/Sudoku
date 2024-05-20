@@ -9,9 +9,9 @@ openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 st.title('Sudoku Puzzle Generator')
 
 #Generate Sudoku
-def generate_sudoku(grid, level):
+def generate_sudoku(size, level):
     llm = ChatOpenAI(api_key=openai_api_key, model_name="gpt-3.5-turbo", temperature = 0.5)
-    prompt=f"Generate {grid} {level} sudoku in printable grid format"
+    prompt=f"Generate {size} x {size} {level} sudoku in printable grid format"
     response = llm.stream(prompt)
     return (response)
 
