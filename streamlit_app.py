@@ -11,7 +11,7 @@ st.title('Sudoku Puzzle Generator')
 #Generate Sudoku
 def generate_sudoku(size, level):
     llm = ChatOpenAI(api_key=openai_api_key, model_name="gpt-3.5-turbo", temperature = 0.5)
-    prompt=f"Generate {size} x {size} {level} sudoku in printable grid format"
+    prompt=f"Generate {size} x {size} {level} sudoku in printable grid format. Give me back only the HTML portion. Do not add any text before as context"
     st.write(prompt)
     response = llm.stream(prompt)
     st.write(response)
@@ -19,134 +19,7 @@ def generate_sudoku(size, level):
     
 #sudoku = generate_sudoku(size,level)
 # Define the HTML for the Sudoku puzzle
-sudoku_html = """
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 300px;
-            height: 300px;
-        }
-        td {
-            border: 1px solid black;
-            width: 33px;
-            height: 33px;
-            text-align: center;
-            font-size: 24px;
-        }
-        .bold-border {
-            border-width: 2px;
-        }
-    </style>
-</head>
-<body>
-    <h2>3x3 Sudoku Puzzle</h2>
-    <table>
-        <tr>
-            <td class="bold-border"></td>
-            <td class="bold-border">2</td>
-            <td class="bold-border"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="bold-border">6</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="bold-border">3</td>
-        </tr>
-        <tr>
-            <td class="bold-border"></td>
-            <td class="bold-border">7</td>
-            <td class="bold-border">4</td>
-            <td></td>
-            <td class="bold-border">8</td>
-            <td></td>
-            <td class="bold-border">2</td>
-            <td class="bold-border"></td>
-            <td class="bold-border"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="bold-border">6</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="bold-border">2</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="bold-border">1</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-</body>
-</html>
-"""
+sudoku_html = generate_sudoku(size, level)
 
 # Embed the HTML into the Streamlit app
 #st.components.v1.html(sudoku_html, height=500)
