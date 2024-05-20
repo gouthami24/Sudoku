@@ -16,8 +16,7 @@ def generate_sudoku(size, level):
     return (response)
 
 #sudoku = generate_sudoku(size,level)
-#print("Generated Sudoku puzzle:")
-#print_grid(sudoku)
+
 
 # User input
 size = st.selectbox('Select size:', ['2','3','4'])  
@@ -27,5 +26,8 @@ level = st.selectbox('Select level:', ['Easy','Medium','Hard'])
 #generate_sudoku(size, level)
 #st.write('The Sudoku Puzzle is', sudoku_puzzle)
 if st.button('Generate'):
-        generate_sudoku(size,level)
+        sudoku=generate_sudoku(size,level)
+
+print("Generated Sudoku puzzle:")
+print_grid(sudoku)
     
