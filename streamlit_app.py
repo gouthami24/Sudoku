@@ -14,6 +14,7 @@ def generate_sudoku(size, level):
     prompt=f"Generate {size} x {size} {level} sudoku in printable grid format"
     response = llm.stream(prompt)
     return (response)
+    print(response)
 
 #sudoku = generate_sudoku(size,level)
 
