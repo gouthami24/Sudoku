@@ -149,7 +149,7 @@ sudoku_html = """
 """
 
 # Embed the HTML into the Streamlit app
-st.components.v1.html(sudoku_html, height=500)
+#st.components.v1.html(sudoku_html, height=500)
 
 # User input
 size = st.selectbox('Select size:', ['2','3','4'])  
