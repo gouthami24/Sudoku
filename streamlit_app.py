@@ -31,5 +31,5 @@ if st.button('Generate'):
         sudoku=generate_sudoku(size,level)
 
 print("Generated Sudoku puzzle:")
-print(sudoku)
+#print(sudoku)
     
