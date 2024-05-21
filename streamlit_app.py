@@ -13,7 +13,7 @@ def generate_sudoku(size, level):
     llm = ChatOpenAI(api_key=openai_api_key, model_name="gpt-3.5-turbo", temperature = 0.5)
     prompt=f"Generate {size} x {size} {level} sudoku in printable grid format. Give me back only the HTML. Do not add any text before as context"
     response = llm.stream(prompt)
-    st.write(response)
+    #st.write(response)
     # Initialize an empty string to hold the response
     response_text = ""
     # Iterate over the generator and accumulate the response text
