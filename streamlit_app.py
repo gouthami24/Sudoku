@@ -15,6 +15,7 @@ def generate_sudoku(size, level):
     prompt=f"Generate {size} x {size} {level} sudoku in printable grid format. Give me back only the HTML. Do not add any text before as context"
     response = llm.stream(prompt)
     st.write(response)
+    st.write(type(response))
     
     # Read the HTML tables into a list of DataFrames
     dfs = pd.read_html(response)
