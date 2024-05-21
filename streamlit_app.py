@@ -33,18 +33,16 @@ def generate_sudoku(size, level):
 # User input
 size = st.selectbox('Select size:', ['2','3','4'])  
 level = st.selectbox('Select level:', ['Easy','Medium','Hard'])  
-st.write(size)
-st.write(level)
 
 #Calling the Sudoku
 #generate_sudoku(size, level)
 #st.write('The Sudoku Puzzle is', sudoku_puzzle)
 if st.button('Generate'):
-    sudoku=generate_sudoku(size, level)
+    sudoku = generate_sudoku(size, level)
     st.markdown(sudoku, unsafe_allow_html=False)
     # st.components.v1.html(sudoku, height=600)
 else:
     st.write("Sorry Cannot Generate")
-st.write("Generated Sudoku puzzle:")
+#st.write("Generated Sudoku puzzle:")
 # print(sudoku)
     
