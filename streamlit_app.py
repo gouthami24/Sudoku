@@ -12,7 +12,6 @@ st.title('Sudoku Puzzle Generator')
 def generate_sudoku(size, level):
     llm = ChatOpenAI(api_key=openai_api_key, model_name="gpt-3.5-turbo", temperature = 0.5)
     prompt=f"Generate {size} x {size} {level} sudoku in printable grid format. Give me back only the HTML. Do not add any text before as context"
-    st.write(prompt)
     response = llm.stream(prompt)
     # st.write(response)
     # Initialize an empty string to hold the response
@@ -22,7 +21,7 @@ def generate_sudoku(size, level):
         response_text += chunk["choices"][0]["text"]  # Adjust based on the actual structure of the response
 
     return (response_text)
-    
+    st.write(response_text)
 # sudoku = generate_sudoku(size,level)
 # Define the HTML for the Sudoku puzzle
 # sudoku_html = generate_sudoku(size, level)
