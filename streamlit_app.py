@@ -41,7 +41,7 @@ if st.button('Generate'):
     st.markdown(sudoku, unsafe_allow_html=False)
     # st.components.v1.html(sudoku, height=600)
 else:
-    st.write("Sorry Cannot Generate")
+    st.write("Please Press Generate Button to see the puzzle")
 #st.write("Generated Sudoku puzzle:")
 # print(sudoku)
     
